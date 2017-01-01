@@ -111,8 +111,8 @@ public class CategoryAutoDeletePlugin implements Plugin, LoggerChannelListener, 
         if (checkCategory(categoryPatterns, category)) {
           final long time = TimeUnit.MILLISECONDS.toMinutes(now - completedTime);
           final long minutes = time % 60;
-          final long hours = time / 60 % 60;
-          final long days = time / 3600 % 24;
+          final long hours = time / 60 % 24;
+          final long days = time / 60 / 24;
           final StringBuilder timeString = new StringBuilder();
           if (days > 0) {
             timeString.append(String.format("%dd", days));
